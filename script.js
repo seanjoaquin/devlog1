@@ -1,18 +1,23 @@
-fetch("https://api.github.com/users/seanjoaquin/repos")
-.then(response => response.json())
+const username = "seanjoaquin";
+const repo = "devlog1";
+
+fetch(`https://api.github.com/repos/${username}/${repo}/commits`)
+.then(res => res.json())
 .then(data => {
 
-  const container = document.getElementById("projects");
+  const container = document.getElementById("commits");
 
-  data.forEach(repo => {
+  data.slice(0,10).forEach(commit => {
 
     const div = document.createElement("div");
-    div.className = "project";
+    div.className = "commit";
+
+    const message = commit.commit.message;
+    const date = new Date(commit.commit.author.date).toLocaleDateString();
 
     div.innerHTML = `
-      <h2>${repo.name}</h2>
-      <p>${repo.description || "No description yet"}</p>
-      <a href="${repo.html_url}" target="_blank">View Project</a>
+      <strong>${date}</strong>
+      <p>${message}</p>
     `;
 
     container.appendChild(div);
