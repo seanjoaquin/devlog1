@@ -1,3 +1,5 @@
+// This is to fetch new commits to the website
+
 const username = "seanjoaquin";
 const repo = "devlog1";
 
