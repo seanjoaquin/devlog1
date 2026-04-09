@@ -29,6 +29,9 @@ h1{
   grid-template-columns:repeat(3, 1fr);
   gap:20px;
   margin:30px;
+  max-width:1000px;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 .project-card{
