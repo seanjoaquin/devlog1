@@ -1,0 +1,17 @@
+body{
+  font-family: Arial;
+  background:#0f172a;
+  color:white;
+  text-align:center;
+}
+
+h1{
+  color:#38bdf8;
+}
+
+.project{
+  border:1px solid #334155;
+  margin:20px;
+  padding:20px;
+  border-radius:10px;
+}
