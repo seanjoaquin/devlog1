@@ -169,7 +169,7 @@ h1 {
 }
 
 .about-content p {
-  max-width: 800px; 
+  max-width: 100%; 
   color: var(--subtext);
   font-size: 17px;
   line-height: 1.6;
