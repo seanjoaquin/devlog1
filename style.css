@@ -1,3 +1,6 @@
+/* ==========================================================================
+   CSS Variables & Base Setup
+   ========================================================================== */
 :root {
   --bg-top: #161617;
   --bg-bottom: #000000;
@@ -42,7 +45,9 @@ body::before {
   z-index: 1000;
 }
 
-/* Full-width Navigation */
+/* ==========================================================================
+   Navigation
+   ========================================================================== */
 .navbar {
   position: sticky;
   top: 0;
@@ -65,7 +70,10 @@ body::before {
   align-items: center;
 }
 
-.logo { font-weight: 600; font-size: 19px; }
+.logo { 
+  font-weight: 600; 
+  font-size: 19px; 
+}
 
 .links a {
   color: var(--text);
@@ -76,9 +84,13 @@ body::before {
   transition: opacity 0.2s ease;
 }
 
-.links a:hover { opacity: 1; }
+.links a:hover { 
+  opacity: 1; 
+}
 
-/* Hero */
+/* ==========================================================================
+   Hero Section & Resume Button
+   ========================================================================== */
 .hero {
   padding: 120px 22px 80px;
   text-align: center;
@@ -101,7 +113,35 @@ h1 {
   margin: 20px auto 0;
 }
 
-/* Main Sections */
+/* Anurag-Inspired Resume Button */
+.hero-cta {
+  margin-top: 32px;
+}
+
+.btn-resume {
+  display: inline-block;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--accent); 
+  background: rgba(0, 113, 227, 0.05); 
+  border: 1px solid var(--accent); 
+  border-radius: 6px; 
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.15, 0, 0.15, 1);
+}
+
+.btn-resume:hover {
+  background: var(--accent); 
+  color: #ffffff; 
+  transform: translateY(-5px); 
+  box-shadow: 0 8px 20px rgba(0, 113, 227, 0.35); 
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   Main Sections & Layout
+   ========================================================================== */
 .section {
   max-width: 1100px;
   margin: 0 auto;
@@ -114,7 +154,42 @@ h1 {
   margin-bottom: 30px;
 }
 
-/* Commit Cards */
+/* ==========================================================================
+   About Me Card
+   ========================================================================== */
+.about-content {
+  width: 100%; 
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 40px 48px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.about-content p {
+  max-width: 800px; 
+  color: var(--subtext);
+  font-size: 17px;
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+}
+
+.about-content p:first-of-type {
+  color: var(--text);
+  font-size: 19px;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+}
+
+.about-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   Commit Activity & Project Cards
+   ========================================================================== */
 .commit {
   background: var(--card);
   border: 1px solid var(--border);
@@ -131,7 +206,6 @@ h1 {
   letter-spacing: 0.08em;
 }
 
-/* Projects Grid */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -156,8 +230,16 @@ h1 {
   border-color: rgba(255,255,255,0.3);
 }
 
-.project-card h3 { font-size: 24px; margin: 0 0 10px 0; }
-.project-card p { color: var(--subtext); font-size: 16px; margin: 0; }
+.project-card h3 { 
+  font-size: 24px; 
+  margin: 0 0 10px 0; 
+}
+
+.project-card p { 
+  color: var(--subtext); 
+  font-size: 16px; 
+  margin: 0; 
+}
 
 .card-arrow {
   position: absolute;
@@ -168,9 +250,14 @@ h1 {
   transition: 0.3s;
 }
 
-.project-card:hover .card-arrow { opacity: 1; transform: translateX(0); }
+.project-card:hover .card-arrow { 
+  opacity: 1; 
+  transform: translateX(0); 
+}
 
-/* Footer */
+/* ==========================================================================
+   Footer
+   ========================================================================== */
 .footer {
   margin-top: 100px;
   padding: 40px 4%;
@@ -186,15 +273,41 @@ h1 {
   margin: 0 auto;
 }
 
-.footer-left p { font-size: 12px; color: var(--subtext); margin: 0; }
-.footer-right { display: flex; gap: 24px; }
-.footer-right a { font-size: 12px; color: var(--subtext); text-decoration: none; transition: 0.2s; }
-.footer-right a:hover { color: var(--text); }
+.footer-left p { 
+  font-size: 12px; 
+  color: var(--subtext); 
+  margin: 0; 
+}
 
-/* Mobile Adjustments */
+.footer-right { 
+  display: flex; 
+  gap: 24px; 
+}
+
+.footer-right a { 
+  font-size: 12px; 
+  color: var(--subtext); 
+  text-decoration: none; 
+  transition: 0.2s; 
+}
+
+.footer-right a:hover { 
+  color: var(--text); 
+}
+
+/* ==========================================================================
+   Mobile Responsive Adjustments
+   ========================================================================== */
 @media (max-width: 768px) {
   .nav-content { padding: 0 24px; }
   .hero { padding: 80px 20px; }
+  
+  /* Shrinks the padding on the About card so it fits nicely on phones */
+  .about-content {
+    padding: 3px 24px;
+    border-radius: 20px;
+  }
+  
   .projects-grid { grid-template-columns: 1fr; }
   .footer-content { flex-direction: column; gap: 20px; text-align: center; }
 }
